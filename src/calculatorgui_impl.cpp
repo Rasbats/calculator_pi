@@ -725,12 +725,13 @@ wxString Dlg::Report_Value(double in_Value, int in_mode){
         case 1:
             //printf("Precise, thousands separator\n");
             //setlocale(LC_ALL,""); //Causes Serious errors in OPENCPN, rounding all tracks waypoints and incoming data.
-//SaltyPaws version	works for win		
+//SaltyPaws version	works for win
+/*		
          return ThousandSeparator(wxString::Format(wxT("%'.15g"), in_Value));
+*/		 
 //Rasbats version
-/*
+
 	        return ThousandSeparator(wxString::Format(wxT("%.15g"), in_Value));		
-*/
             //return Temp_String;
             break;
 
