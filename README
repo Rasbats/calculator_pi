@@ -1,3 +1,16 @@
+Version 2.1
+===========
+Preparation for internationalisation.
+Added dialog for converting degrees (dd.dddddd to dd.mm and dd.mm.sss).
+
+Version 2.0
+===========
+This version for OpenCPN v5.
+Now compiles on Windows and Linux.
+Changes
+For ease of maintenance the Functions button has been removed from the toolbar. Still available from the Calculator dialog.
+Uses SVG icons for the Toolbar.
+
 Version 1.8
 ===========
 Testing for cross-compiling.

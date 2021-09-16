@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-06 15:21+0000\n"
+"POT-Creation-Date: 2019-05-01 07:56+0100\n"
 "PO-Revision-Date: 2018-03-06 07:42-0500\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Romanian\n"
@@ -20,118 +20,7 @@ msgstr ""
 msgid " Calculator output:"
 msgstr ""
 #
-msgid "\""
-msgstr ""
-#
-msgid "'"
-msgstr ""
-#
-msgid "(5/9) * (VAR - 32)=((9/5)* VAR)+32"
-msgstr ""
-#
-msgid "(5/9)*(VAR-491.67)=(9/5)*(VAR + 273.15)"
-msgstr ""
-#
-msgid "-"
-msgstr ""
-#
-msgid "0.0001"
-msgstr ""
-#
-msgid "0.001"
-msgstr ""
-#
-msgid "0.01"
-msgstr ""
-#
-msgid "0.0254"
-msgstr ""
-#
-msgid "0.03386"
-msgstr ""
-#
-msgid "0.0689475729"
-msgstr ""
-#
-msgid "0.092903"
-msgstr ""
-#
-msgid "0.277778"
-msgstr ""
-#
-msgid "0.3048"
-msgstr ""
-#
-msgid "0.514444"
-msgstr ""
-#
-msgid "0.987"
-msgstr ""
-#
-msgid "1"
-msgstr ""
-#
-msgid "1.8288"
-msgstr ""
-#
-msgid "1000"
-msgstr ""
-#
-msgid "15850.3231"
-msgstr ""
-#
-msgid "1852"
-msgstr ""
-#
-msgid "1e-05"
-msgstr ""
-#
-msgid "2"
-msgstr ""
-#
-msgid "2.20462"
-msgstr ""
-#
-msgid "3"
-msgstr ""
-#
-msgid "3600"
-msgstr ""
-#
-msgid "4"
-msgstr ""
-#
-msgid "4.4482216"
-msgstr ""
-#
-msgid "60"
-msgstr ""
-#
-msgid "60000"
-msgstr ""
-#
-msgid "750.06"
-msgstr ""
-#
-msgid "A"
-msgstr ""
-#
 msgid "All"
-msgstr ""
-#
-msgid "Angle"
-msgstr ""
-#
-msgid "Angle_Out"
-msgstr ""
-#
-msgid "Angle_Out=Angle_In"
-msgstr ""
-#
-msgid "Area"
-msgstr ""
-#
-msgid "Beaufort"
 msgstr ""
 #
 msgid ""
@@ -141,12 +30,6 @@ msgid ""
 msgstr ""
 #
 msgid "Beaufort to Wind Velocity"
-msgstr ""
-#
-msgid "Beaufort=(Wind_Speed/0.837)^(2/3)"
-msgstr ""
-#
-msgid "CLEAR"
 msgstr ""
 #
 msgid "Calculate"
@@ -171,7 +54,8 @@ msgid "Calculator Plugin"
 msgstr ""
 #
 msgid ""
-"Calculator Plugin for OpenCPN by SaltyPaws aka Walbert Schulpen\n"
+"Calculator Plugin for OpenCPN by SaltyPaws aka Walbert Schulpen/Updated by "
+"Mike Rossiter(Rasbats)\n"
 "=======================================\n"
 "\n"
 "This is a light weight yet powerful calculator plugin for OpenCPN. Would you "
@@ -186,6 +70,13 @@ msgid ""
 "Adding formulas is easy. If your favorite nautical equation is missing, "
 "please let me know your equation via flyspray, and I will add it.\n"
 "\n"
+"Many formulas are based on U.S. units. Formulas use a 'base' unit, for "
+"example US Gallons per Minute. Conversion factors are used to display the "
+"result in other units. Using other units the result may not be exactly as "
+"expected. For example \"Convert Flowrate\": 10 m3/s converts to "
+"599999.999365987 liter per minute, not 600000 exactly, using the 'precise' "
+"accuracy.\n"
+"\n"
 "Help\n"
 "=========\n"
 "Type help in the calculator to get these instructions.\n"
@@ -198,7 +89,7 @@ msgid ""
 "\tvhull=1.34*LWL^(1/2)\t(hull speed in knots)\n"
 "\n"
 "Conversions:\n"
-"\tftm=0.3048\t\t\t(feet to meters)\n"
+"\tftm=0.3048\t\t(feet to meters)\n"
 "\tkm_to_nm=0.539957\t\t(Kilometers to nautical Mile)\n"
 "\tftm*LWL\t\t\t(waterline length in meters)\n"
 "\n"
@@ -234,7 +125,7 @@ msgid ""
 "log2 \t1 \tlogarithm to the base 2\n"
 "log10 \t1 \tlogarithm to the base 10\n"
 "log \t1 \tlogarithm to the base 10\n"
-"ln \t\t1 \tlogarithm to base e (2.71828...)\n"
+"ln \t1 \tlogarithm to base e (2.71828...)\n"
 "exp \t1 \te raised to the power of x\n"
 "sqrt \t1 \tsquare root of a value\n"
 "sign \t1 \tsign function -1 if x<0; 1 if x>0\n"
@@ -250,21 +141,21 @@ msgid ""
 "\n"
 "The following table lists the default binary operators supported by the "
 "parser.\n"
-"Operator \tMeaning \tPriority\n"
-"= \t\tassignement \t\t\t-1\n"
-"&& \tlogical and \t\t\t1\n"
+"Operator \t\tMeaning \t\t\t\tPriority\n"
+"= \t\tassignment \t\t\t-1\n"
+"&& \t\tlogical and \t\t\t1\n"
 "|| \t\tlogical or\t \t\t\t2\n"
 "<= \t\tless or equal \t\t\t4\n"
-">= \t\tgreater or equal \t\t4\n"
+">= \t\tgreater or equal \t\t\t4\n"
 "!= \t\tnot equal \t\t\t\t4\n"
-"== \t\tequal \t\t\t\t\t4\n"
+"== \t\tequal \t\t\t\t4\n"
 "> \t\tgreater than \t\t\t4\n"
 "< \t\tless than \t\t\t\t4\n"
 "+ \t\taddition \t\t\t\t5\n"
 "- \t\tsubtraction \t\t\t5\n"
-"* \t\tmultiplication \t\t6\n"
+"* \t\tmultiplication \t\t\t6\n"
 "/ \t\tdivision \t\t\t\t6\n"
-"^ \t\traise x to the power of y \t7\n"
+"^ \t\traise x to the power of y \t\t7\n"
 "*The assignment operator is special since it changes one of its arguments and "
 "can only by applied to variables.\n"
 "Other operators\n"
@@ -292,38 +183,27 @@ msgid ""
 "\thelp - show the help menu\n"
 "\n"
 "Settings/Plugins/Preferences:\n"
-"\tShow/Hide Calculate, Help and History toggle buttons\n"
+"\tShow/Hide Function, Calculate and Help buttons\n"
 "\tHistory Settings: max Results -this is the number of results that will be "
 "stored in the history pulldown. The history pulldown will contain five times "
 "this value\n"
-"\tLog to opencpn: Enable/Disable logging of results to opencpn logfile."
+"\tLog to opencpn: Enable/Disable logging of results to opencpn logfile.\n"
+"\n"
+"Calculate Button:\n"
+"\tEnter the expression in the input box: e.g. 4+2. Do NOT use the = sign. "
+"\"Enter\" or press \"Calculate\".\n"
+"\tIf you are using \"History\" the results will appear there. If not the "
+"result will appear in the input box.\n"
+"\tIf you make a mistake, press \"C/CE\" to clear the input box.  "
 msgstr ""
 #
 msgid "Calculator Preferences"
 msgstr ""
 #
-msgid "Calculator Reporting"
-msgstr ""
-#
-msgid "Calculator by SaltyPaws"
-msgstr ""
-#
 msgid "Calculator preferences"
 msgstr ""
 #
-msgid "Celsius"
-msgstr ""
-#
-msgid "Centimeter"
-msgstr ""
-#
 msgid "Change in height of Tide"
-msgstr ""
-#
-msgid "Change_in_height_of_Tide = height/2 * (1-cos(dtr(180) * time_ratio))"
-msgstr ""
-#
-msgid "Clear"
 msgstr ""
 #
 msgid "Close"
@@ -335,7 +215,13 @@ msgstr ""
 msgid "Convert"
 msgstr ""
 #
+msgid "Convert (All formats)"
+msgstr ""
+#
 msgid "Convert Angle"
+msgstr ""
+#
+msgid "Convert Degrees (All formats)"
 msgstr ""
 #
 msgid "Convert Distance"
@@ -353,25 +239,7 @@ msgstr ""
 msgid "Convert Temperature"
 msgstr ""
 #
-msgid "DD.dddddd° (no limit to decimals)"
-msgstr ""
-#
-msgid "DD°MM'SS.s (no limit to digits)"
-msgstr ""
-#
-msgid "Degree"
-msgstr ""
-#
-msgid "Degree (°)"
-msgstr ""
-#
-msgid "Degree, Minute"
-msgstr ""
-#
-msgid "Degrees"
-msgstr ""
-#
-msgid "Density"
+msgid "Degree Conversions"
 msgstr ""
 #
 msgid "Description"
@@ -380,16 +248,10 @@ msgstr ""
 msgid "Design"
 msgstr ""
 #
-msgid "Distance"
+msgid "Display Accuracy"
 msgstr ""
 #
 msgid "Distance to horizon"
-msgstr ""
-#
-msgid "Distance_In"
-msgstr ""
-#
-msgid "Distance_Out=Distance_In"
 msgstr ""
 #
 msgid "Diving"
@@ -409,32 +271,37 @@ msgid ""
 "to manila line. The basic breaking strength factor for manila line is found "
 "by multiplying the square of the circumference of the line by 900 lbs. Knots "
 "and splices only have 50-60 of line strenght.\n"
-"\tLine Material\tComparison Factor \n"
-"\tNylon\t\t\t\t\t2.5\n"
-"\tDacron\t\t\t\t2.0\n"
-"\tPolypropylene\t\t1.4\n"
-"\tManilla \t\t\t\t1.0"
+"\n"
+"Line Material\tComparison Factor \n"
+"Nylon\t\t\t2.5\n"
+"Dacron\t\t\t2.0\n"
+"Polypropylene\t\t1.4\n"
+"Manilla \t\t\t1.0"
+msgstr ""
+#
+msgid ""
+"Each type of line, natural fiber, synthetic and wire rope, have different "
+"breaking strengths and safe working loads. Natural breaking strength of "
+"manila line is the standard against which other lines are compared. Synthetic "
+"lines have been assigned comparison factors against which they are compared "
+"to manila line. The basic breaking strength factor for manila line is found "
+"by multiplying the square of the circumference of the line by 900 lbs. Knots "
+"and splices only have 50-60 percent of line strength.\n"
+"\n"
+"Line Material\tComparison Factor \n"
+"Nylon\t\t\t2.5\n"
+"Dacron\t\t\t2.0\n"
+"Polypropylene\t\t1.4\n"
+"Manilla \t\t\t1.0"
 msgstr ""
 #
 msgid "Error"
 msgstr ""
 #
+msgid "Error:Missing parenthesis"
+msgstr ""
+#
 msgid "Extra Functions"
-msgstr ""
-#
-msgid "FALSE"
-msgstr ""
-#
-msgid "FUNCTION"
-msgstr ""
-#
-msgid "Fahrenheit"
-msgstr ""
-#
-msgid "Fathom"
-msgstr ""
-#
-msgid "Fetch"
 msgstr ""
 #
 msgid "Fetch Modified Wilson"
@@ -444,22 +311,11 @@ msgid "Flow rate of leak in boat"
 msgstr ""
 #
 msgid ""
-"Flow rate of leak in boat:\tQ = 3,600 (A) (H)\n"
-"\tQ = gallons per minute of water coming in\n"
-"\tA = area of hole in square feet\n"
-"\tH = height of water over hole in feet, to bottom of the opening"
-msgstr ""
-#
-msgid "Flowrate"
-msgstr ""
-#
-msgid "Flowrate_Out"
-msgstr ""
-#
-msgid "Flowrate_Out=Flowrate_In"
-msgstr ""
-#
-msgid "Force"
+"Flow rate of leak in boat:\tQ = 7.48*A*(2gH)^0.5\n"
+"\n"
+"Q = volume per minute of water coming in\n"
+"A = area of hole\n"
+"H = height of water over hole, to bottom of the opening"
 msgstr ""
 #
 msgid "Function"
@@ -468,43 +324,21 @@ msgstr ""
 msgid "Function And Description"
 msgstr ""
 #
-msgid "Function Button in Calculator window"
-msgstr ""
-#
-msgid "Function Button in OpenCPN (Requires OpenCPN restart)"
+msgid "Function Button"
 msgstr ""
 #
 msgid "Function Result Select Units"
 msgstr ""
 #
-msgid "Functions"
-msgstr ""
-#
-msgid "H"
-msgstr ""
-#
-msgid "HELP"
-msgstr ""
-#
-msgid "HIDECALCULATE"
-msgstr ""
-#
-msgid "HIDEFUNCTION"
-msgstr ""
-#
-msgid "HIDEHELP"
-msgstr ""
-#
-msgid "HIDEHISTORY"
-msgstr ""
-#
-msgid "HISTORY"
+msgid ""
+"Height is total change in tide height between high and low. The time ratio is "
+"time elapsed from the previous tide divided by the time difference between "
+"the two tides. (Similar to rule of 12)"
 msgstr ""
 #
 msgid ""
-"Height is total change in tide heigt between high and low. The time ratio is "
-"time elapsed from the previous tide divided by the time difference between "
-"the two tides. (Similar to rule of 12)"
+"Height_observer is the height of the observer\n"
+"Height_object is the height of the object"
 msgstr ""
 #
 msgid "Help"
@@ -516,31 +350,10 @@ msgstr ""
 msgid "Help!!!!"
 msgstr ""
 #
-msgid "HideCalculate"
-msgstr ""
-#
-msgid "HideFunction"
-msgstr ""
-#
-msgid "HideHelp"
-msgstr ""
-#
-msgid "HideHistory"
-msgstr ""
-#
 msgid "History"
 msgstr ""
 #
-msgid "History Pulldown"
-msgstr ""
-#
 msgid "History Settings"
-msgstr ""
-#
-msgid "History Toggle"
-msgstr ""
-#
-msgid "Hours"
 msgstr ""
 #
 msgid "Hull Speed"
@@ -584,9 +397,9 @@ msgstr ""
 msgid ""
 "If the Earth is assumed to be a sphere with no atmosphere then the distance "
 "to the horizon can easily be calculated. (The Earths radius of curvature "
-"actually varies by 1 between the Equator and the Poles, so this formula isnt "
+"actually varies between the Equator and the Poles, so this formula isnt "
 "absolutely exact even assuming no refraction.) This formula assumes earth "
-"diameter of 12 756.32 km."
+"diameter of 12756.32 km."
 msgstr ""
 #
 msgid ""
@@ -602,31 +415,12 @@ msgid ""
 "approximated, to within one degree, from the following formula:"
 msgstr ""
 #
-msgid "Inches of Mercury"
-msgstr ""
-#
 msgid "Input Parameters"
 msgstr ""
 #
-msgid "Kelvin"
-msgstr ""
-#
-msgid "Knots"
-msgstr ""
-#
-msgid "L"
-msgstr ""
-#
-msgid "LWL"
-msgstr ""
-#
-msgid "Lat "
-msgstr ""
-#
-msgid "Lattitude  "
-msgstr ""
-#
-msgid "Lbs (weight)"
+msgid ""
+"LWL = Length of water line\n"
+"Vhull = Hull speed"
 msgstr ""
 #
 msgid "Line Break strength (circumference)"
@@ -644,12 +438,6 @@ msgstr ""
 msgid "Log results to opencpn"
 msgstr ""
 #
-msgid "Lon"
-msgstr ""
-#
-msgid "Longitude"
-msgstr ""
-#
 msgid "Max Results"
 msgstr ""
 #
@@ -657,15 +445,6 @@ msgid "Maximum Wavelength"
 msgstr ""
 #
 msgid "Maximum Wavelength = 1.5 x square root of fetch in nm"
-msgstr ""
-#
-msgid "Maximum_Wavelength = 1.5 * sqrt(fetch)"
-msgstr ""
-#
-msgid "Meter"
-msgstr ""
-#
-msgid "Minutes"
 msgstr ""
 #
 msgid ""
@@ -691,13 +470,10 @@ msgstr ""
 msgid "Naoto Ebuchi, Journal of oceanography, vol 55, pp 575 to 584, 1999"
 msgstr ""
 #
-msgid "Nautical Miles"
-msgstr ""
-#
 msgid "Navigation"
 msgstr ""
 #
-msgid "Newton"
+msgid "Not very accurate - use official publications"
 msgstr ""
 #
 msgid "Objects above horizon"
@@ -709,9 +485,6 @@ msgstr ""
 msgid "Other"
 msgstr ""
 #
-msgid "Pa"
-msgstr ""
-#
 msgid "Parameter"
 msgstr ""
 #
@@ -719,57 +492,27 @@ msgid ""
 "Patch or cover thickness to withstand water pressure (patch over hole):\n"
 "\n"
 "\tT = square root of:\t(48x (H) (L2))/ 1000)\n"
-"\tT = thickness of wood or plywood patch in inches\n"
-"\tH = height of water above bottom of hole, in feet\n"
-"\tL = length of patch, longest distance between supports, in feet"
+"\tT = thickness of wood or plywood patch\n"
+"\tH = height of water above bottom of hole\n"
+"\tL = length of patch, longest distance between supports"
 msgstr ""
 #
 msgid "Patch over hole"
 msgstr ""
 #
-msgid "Precise (Default)"
+msgid "Precise"
 msgstr ""
 #
 msgid "Precise, thousands separator"
 msgstr ""
 #
-msgid "Pressure"
-msgstr ""
-#
 msgid "Pressure at depth"
 msgstr ""
 #
-msgid "Pressure=density*9.80665*depth"
-msgstr ""
-#
-msgid "Pressure_In"
-msgstr ""
-#
-msgid "Pressure_Out=Pressure_In"
-msgstr ""
-#
-msgid "Q = 3600 *(A)* (H)"
-msgstr ""
-#
-msgid "Radians"
-msgstr ""
-#
-msgid "Rankine"
+msgid "Rasbats"
 msgstr ""
 #
 msgid "S"
-msgstr ""
-#
-msgid "SHOWCALCULATE"
-msgstr ""
-#
-msgid "SHOWFUNCTION"
-msgstr ""
-#
-msgid "SHOWHELP"
-msgstr ""
-#
-msgid "SHOWHISTORY"
 msgstr ""
 #
 msgid "Safety"
@@ -779,12 +522,6 @@ msgid "Saltypaws"
 msgstr ""
 #
 msgid "Scientific"
-msgstr ""
-#
-msgid "Seconds"
-msgstr ""
-#
-msgid "See table"
 msgstr ""
 #
 msgid "Select Function"
@@ -809,76 +546,13 @@ msgstr ""
 msgid "Show/Hide history"
 msgstr ""
 #
-msgid ""
-"Show/Hide history toggle (you can always type \"history\" from input window)."
-msgstr ""
-#
-msgid "ShowCalculate"
-msgstr ""
-#
-msgid "ShowFunction"
-msgstr ""
-#
-msgid "ShowHelp"
-msgstr ""
-#
-msgid "ShowHistory"
-msgstr ""
-#
-msgid "Speed"
-msgstr ""
-#
 msgid "Speed of wind-driven current"
-msgstr ""
-#
-msgid "Speed_Current = 0.03 * (Speed_Wind)"
-msgstr ""
-#
-msgid "Speed_In"
-msgstr ""
-#
-msgid "Speed_Out=Speed_In"
-msgstr ""
-#
-msgid "Speed_Wind"
-msgstr ""
-#
-msgid "Square cm"
-msgstr ""
-#
-msgid "Square feet"
-msgstr ""
-#
-msgid "Square meter"
 msgstr ""
 #
 msgid "Succinct"
 msgstr ""
 #
 msgid "Succinct, thousands separator"
-msgstr ""
-#
-msgid "T = sqrt( (48* H* (L^2))/1000)"
-msgstr ""
-#
-msgid "TRUE"
-msgstr ""
-#
-msgid "T_air"
-msgstr ""
-#
-msgid ""
-"T_wind_chill = 13.12 + 0.6215 * T_air - 11.37 * V_wind^0.16 + 0.3965 * T_air* "
-"V_wind^0.16 "
-msgstr ""
-#
-msgid "Temperature"
-msgstr ""
-#
-msgid "Temperature_In"
-msgstr ""
-#
-msgid "Temperature_Out=Temperature_In"
 msgstr ""
 #
 msgid "Test"
@@ -889,7 +563,7 @@ msgid ""
 "  Would you like to know your hull speed?"
 msgstr ""
 #
-msgid "Time"
+msgid "Three decimal places (Default)"
 msgstr ""
 #
 msgid ""
@@ -899,37 +573,7 @@ msgid ""
 "distance to the horizon. This formula assumes earth diameter of 12 756.32 km."
 msgstr ""
 #
-msgid "U10"
-msgstr ""
-#
-msgid "US gallons per minute"
-msgstr ""
-#
-msgid "V"
-msgstr ""
-#
-msgid "VAR - 273.15=VAR + 273.15"
-msgstr ""
-#
-msgid "VAR-1=VAR+1"
-msgstr ""
-#
-msgid "VAR/dtr=VAR*dtr"
-msgstr ""
-#
-msgid "VMG=V*cos((alpha1-alpha2)*dtr)"
-msgstr ""
-#
-msgid "VMG=V*cos(alpha*dtr)"
-msgstr ""
-#
-msgid "V_wind"
-msgstr ""
-#
 msgid "Velocity Made Good (angle)"
-msgstr ""
-#
-msgid "Velocity Made Good (delta)"
 msgstr ""
 #
 msgid ""
@@ -954,20 +598,7 @@ msgstr ""
 msgid "Wave speed =f(period)"
 msgstr ""
 #
-msgid "Wave_speed = 3.03 * (wave_period)"
-msgstr ""
-#
-msgid ""
-"Waveheight=0 ,CDU10=(0.879+0.075*U10)*10^-3,U10 < 8 ? alpha = 1 : alpha = 0.6 "
-"+ 0.05 * U10 ,Cd=CDU10/alpha ,F_hat=(Fetch*9.80665)/U10^2 ,F_star=F_hat/Cd,"
-"F_tilde=CDU10*F_star ,H_tilde=0.3*alpha*(1-(1+0.004*sqrt(F_tilde/alpha))^-2) ,"
-"H_star=H_tilde/CDU10 ,H_hat=H_star*Cd ,Waveheight=H_hat*(U10^2)/9.80665"
-msgstr ""
-#
 msgid "Weather"
-msgstr ""
-#
-msgid "Weight"
 msgstr ""
 #
 msgid "Wind Chill"
@@ -976,132 +607,26 @@ msgstr ""
 msgid "Wind Velocity to Beaufort"
 msgstr ""
 #
-msgid "Wind_Speed"
-msgstr ""
-#
-msgid "Wind_Speed=0.837*Beaufort^(3/2)"
-msgstr ""
-#
-msgid "alpha"
-msgstr ""
-#
-msgid "alpha1"
-msgstr ""
-#
-msgid "alpha2"
-msgstr ""
-#
-msgid "angle"
-msgstr ""
-#
-msgid "atm"
-msgstr ""
-#
-msgid "bar"
-msgstr ""
-#
-msgid "bara"
-msgstr ""
-#
-msgid "barg"
-msgstr ""
-#
-msgid "breaking_strength= 900 * comparison_factor * (pi*diameter)^2 "
-msgstr ""
-#
-msgid "breaking_strength= 900 * comparison_factor * circumference^2 "
-msgstr ""
-#
-msgid "circumference"
-msgstr ""
-#
-msgid "clear"
-msgstr ""
-#
-msgid "comparison_factor"
-msgstr ""
-#
-msgid "density"
-msgstr ""
-#
-msgid "depth"
-msgstr ""
-#
-msgid "dewpoint"
-msgstr ""
-#
-msgid "diameter"
-msgstr ""
-#
-msgid "distance_horizon=sqrt(height* (height + 12756.32))"
-msgstr ""
-#
-msgid ""
-"distance_visible=sqrt(height_observer * (height_observer + 12756.32)) + "
-"sqrt(height_object * (height_object + 12756.32))"
-msgstr ""
-#
-msgid "draft"
-msgstr ""
-#
-msgid "draft_heeled=draft*cos(dtr*angle)"
+msgid "calculator"
 msgstr ""
 #
 msgid "ere"
 msgstr ""
 #
-msgid "feet"
-msgstr ""
-#
-msgid "fetch"
-msgstr ""
-#
-msgid "foot"
-msgstr ""
-#
-msgid "function"
-msgstr ""
-#
-msgid "gram"
-msgstr ""
-#
-msgid "height"
-msgstr ""
-#
-msgid "height_object"
-msgstr ""
-#
-msgid "height_observer"
-msgstr ""
-#
-msgid "help"
-msgstr ""
-#
-msgid "hidecalculate"
-msgstr ""
-#
-msgid "hidefunction"
-msgstr ""
-#
-msgid "hidehelp"
-msgstr ""
-#
-msgid "hidehistory"
-msgstr ""
-#
-msgid "history"
+msgid "fetch = distance over water that the wind blows"
 msgstr ""
 #
 msgid ""
-"http://climate.weatheroffice.gc.ca/prods_servs/normals_documentation_e.html"
+"fetch = distance over water that the wind blows\n"
+"U10 - windspeed (10m) must be entered as m/s"
+msgstr ""
+#
+msgid "http://climate.weather.gc.ca/glossary_e.html"
 msgstr ""
 #
 msgid ""
 "http://en.wikipedia.org/wiki/Wind_chill, http://climate.weatheroffice.gc.ca/"
 "prods_servs/normals_documentation_e.html"
-msgstr ""
-#
-msgid "http://lagoon-inside.com/2012/01/faster-thanks-to-the-vmg-concept/"
 msgstr ""
 #
 msgid "http://planetcalc.com/384/"
@@ -1118,94 +643,15 @@ msgid ""
 "Saltypaws"
 msgstr ""
 #
+msgid ""
+"https://en.wikipedia.org/wiki/Horizon#Exact_formula_for_a_spherical_Earth"
+msgstr ""
+#
 msgid "https://en.wikipedia.org/wiki/Horizon, Objects above horizon"
 msgstr ""
 #
-msgid "https://en.wikipedia.org/wiki/Horizon, geometrical model"
+msgid "https://en.wikipedia.org/wiki/Velocity_made_good"
 msgstr ""
 #
-msgid ""
-"humidex = (T_air) + (0.5555)*((6.11 * exp (5417.7530 * ( (1/273.16) - (1/"
-"dewpoint) ) ) ) - 10.0)"
-msgstr ""
-#
-msgid "inch"
-msgstr ""
-#
-msgid "kPa"
-msgstr ""
-#
-msgid "kg"
-msgstr ""
-#
-msgid "kg/liter"
-msgstr ""
-#
-msgid "kg/m3"
-msgstr ""
-#
-msgid "kilometer"
-msgstr ""
-#
-msgid "km/h"
-msgstr ""
-#
-msgid "knots"
-msgstr ""
-#
-msgid "lbs"
-msgstr ""
-#
-msgid "liter per minute"
-msgstr ""
-#
-msgid "m/s"
-msgstr ""
-#
-msgid "m3/s"
-msgstr ""
-#
-msgid "mBar"
-msgstr ""
-#
-msgid "meter"
-msgstr ""
-#
-msgid "mmHg"
-msgstr ""
-#
-msgid "psi"
-msgstr ""
-#
-msgid "psia"
-msgstr ""
-#
-msgid "seconds"
-msgstr ""
-#
-msgid "showcalculate"
-msgstr ""
-#
-msgid "showfunction"
-msgstr ""
-#
-msgid "showhelp"
-msgstr ""
-#
-msgid "showhistory"
-msgstr ""
-#
-msgid "time_ratio"
-msgstr ""
-#
-msgid "vhull=1.34*sqrt(LWL)"
-msgstr ""
-#
-msgid "wave_period"
-msgstr ""
-#
-msgid "°"
-msgstr ""
-#
-msgid "° ' \""
+msgid "https://www.boatdesign.net/threads/water-intrusion-formula.38075/"
 msgstr ""
