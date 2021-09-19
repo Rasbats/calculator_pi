@@ -1,11 +1,11 @@
 site:
-  title: calculator Plugin Manual
+  title: Calculator
   url:  https://nowhere.net
   start_page: calculator:ROOT:index.adoc
 
 content:
   sources:
-    - url: ../
+    - url: ..
       start_path: manual
       branches: HEAD
       edit_url: https://github.com/Rasbats/calculator_pi/edit/master/{path}
