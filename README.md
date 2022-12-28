@@ -25,6 +25,15 @@ The software contains open-source licensed files under different licenses
 including Expat, Apache-2  and Libpng. See the source files for details.
 
 =========================================================
+
+Version 4.0.0
+=============
+Updated for wxWidgets 3.2.1.
+Added PKG_NAME to Plugin.cmake.
+
+Version 3.0.0
+=============
+
 Version 2.1
 ===========
 Preparation for internationalisation.
