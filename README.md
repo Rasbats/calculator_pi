@@ -180,4 +180,3 @@ License
 =======
 The plugin is licensed under the terms of GPL v2 or, at your will, later. 
 The MuParser files are by Ingo Berg and is open source. For full licence, please see the muparser source files.
-
