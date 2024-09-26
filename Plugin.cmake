@@ -34,7 +34,7 @@ option(CALCULATOR_USE_SVG "Use SVG graphics" ON)
 # -------  Plugin setup --------
 #
 set(PKG_NAME calculator_pi)
-set(PKG_VERSION  4.0.0)
+set(PKG_VERSION  4.1.0)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME Calculator)    # Dialogs, installer artifacts, ...
@@ -50,20 +50,20 @@ set(PKG_HOMEPAGE https://github.com/Rasbats/calculator_pi)
 set(PKG_INFO_URL https://opencpn.org/OpenCPN/plugins/calculator.html)
 
 SET(SRC
-	src/calculator_pi.h
-	src/calculator_pi.cpp
-	src/icons.h
-	src/icons.cpp
-	src/calculatorgui.h
-	src/calculatorgui.cpp
-	src/calculatorgui_impl.cpp
-	src/calculatorgui_impl.h
-	src/functions.h
-	src/functions.cpp
-	src/units_conversion.h
-	src/units_conversion.cpp
-	src/VariableFactory.h
-	src/VariableFactory.cpp
+    src/calculator_pi.h
+    src/calculator_pi.cpp
+    src/icons.h
+    src/icons.cpp
+    src/calculatorgui.h
+    src/calculatorgui.cpp
+    src/calculatorgui_impl.cpp
+    src/calculatorgui_impl.h
+    src/functions.h
+    src/functions.cpp
+    src/units_conversion.h
+    src/units_conversion.cpp
+    src/VariableFactory.h
+    src/VariableFactory.cpp
 )
 
 set(PKG_API_LIB api-16)  #  A directory in libs/ e. g., api-17 or api-16
