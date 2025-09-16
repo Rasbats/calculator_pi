@@ -492,7 +492,7 @@ this->m_Input_parameter9.Add(_T(""));
 this->m_Input_unit9.Add(_T(""));
 
 this->m_ShortDesc.Add(_("Pressure at depth"));
-this->m_LongDesc.Add(_("If a fluid is within a container then the depth of an object placed in that fluid can be measured. The deeper the object is placed in the fluid, the more pressure it experiences. This is because is the weight of the fluid above it. The more dense the fluid above it, the more pressure is exerted on the object that is submerged, due to the weight of the fluid. Density is function of salinity and water temperature. Below are average values.\nDensity Sea Water = 1.035 kg/liter\nDensity Fresh Water = 1.0 kg/liter"));
+this->m_LongDesc.Add(_("If a fluid is within a container then the depth of an object placed in that fluid can be measured. The deeper the object is placed in the fluid, the more pressure it experiences. This is because is the weight of the fluid above it. The more dense the fluid above it, the more pressure is exerted on the object that is submerged, due to the weight of the fluid. Density is function of salinity and water temperature. Use these average values:\nDensity Sea Water = 1035 kg/m3\nDensity Fresh Water = 1000 kg/m3"));
 this->m_Category.Add(_("Diving"));
 this->m_Source.Add(_("http://www.grc.nasa.gov/WWW/k-12/WindTunnel/Activities/fluid_pressure.html\nSaltypaws"));
 this->m_Formula.Add(_T("Pressure=density*9.80665*depth"));

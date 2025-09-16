@@ -5,7 +5,7 @@
    |  Y Y  \  |  /  |_> > __ \|  | \/\___ \\  ___/|  | \/
    |__|_|  /____/|   __(____  /__|  /____  >\___  >__|
 		 \/      |__|       \/           \/     \/
-   Copyright (C) 2004 - 2021 Ingo Berg
+   Copyright (C) 2024 Ingo Berg
 
 	Redistribution and use in source and binary forms, with or without modification, are permitted
 	provided that the following conditions are met:
@@ -39,6 +39,7 @@
 
 #include "muParserTest.h"
 #include "muParser.h"
+#include "muParserBytecode.h"
 
 using namespace std;
 using namespace mu;
@@ -50,7 +51,6 @@ void CalcBulk();
 // Operator callback functions
 static value_type Mega(value_type a_fVal) { return a_fVal * 1e6; }
 static value_type Milli(value_type a_fVal) { return a_fVal / (value_type)1e3; }
-static value_type Rnd(value_type v) { return v * std::rand() / (value_type)(RAND_MAX + 1.0); }
 static value_type Not(value_type v) { return v == 0; }
 static value_type Add(value_type v1, value_type v2) { return v1 + v2; }
 static value_type Mul(value_type v1, value_type v2) { return v1 * v2; }
@@ -189,7 +189,7 @@ static void Splash()
 	mu::console() << _T(R"( |__|_|  /____/|   __(____  /___|  /___  >\___  >|__|    )") << _T("\n");
 	mu::console() << _T(R"(       \/      |__|       \/           \/     \/        )") << _T("\n");
 	mu::console() << _T("  Version ") << Parser().GetVersion(pviFULL) << _T("\n");
-	mu::console() << _T("  (C) 2004 - 2020 Ingo Berg\n");
+	mu::console() << _T("  (C) 2024 Ingo Berg\n");
 	mu::console() << _T("\n");
 	mu::console() << _T("-----------------------------------------------------------\n");
 
@@ -256,9 +256,9 @@ static void ListVar(const mu::ParserBase& parser)
 	if (!variables.size())
 		return;
 
-	cout << "\nParser variables:\n";
-	cout << "-----------------\n";
-	cout << "Number: " << (int)variables.size() << "\n";
+	mu::console() << _T("\nParser variables:\n");
+	mu::console() << _T("-----------------\n");
+	mu::console() << _T("Number: " << (int)variables.size() << "\n");
 	varmap_type::const_iterator item = variables.begin();
 	for (; item != variables.end(); ++item)
 		mu::console() << _T("Name: ") << item->first << _T("   Address: [0x") << item->second << _T("]\n");
@@ -289,7 +289,7 @@ static void ListExprVar(const mu::ParserBase& parser)
 	string_type sExpr = parser.GetExpr();
 	if (sExpr.length() == 0)
 	{
-		cout << _T("Expression string is empty\n");
+		mu::console() << _T("Expression string is empty\n");
 		return;
 	}
 
@@ -438,6 +438,11 @@ static void Calc()
 {
 	mu::Parser  parser;
 
+	// This is how you activate a german locale:
+	//parser.SetDecSep(',');
+	//parser.SetArgSep(';');
+	//parser.SetThousandsSep('.');
+
 	// Add some variables
 	value_type  vVarVal[] = { 1, 2 }; // Values of the parser variables
 	parser.DefineVar(_T("a"), &vVarVal[0]);  // Assign Variable names and bind them to the C++ variables
@@ -455,7 +460,6 @@ static void Calc()
 	parser.DefineFun(_T("strfun0"), StrFun0);
 	parser.DefineFun(_T("strfun2"), StrFun2);
 	parser.DefineFun(_T("ping"), Ping);
-	parser.DefineFun(_T("rnd"), Rnd, false);     // Add an unoptimizeable function
 	parser.DefineFun(_T("throw"), ThrowAnException);
 
 	parser.DefineOprt(_T("add"), Add, 0);
@@ -474,6 +478,15 @@ static void Calc()
 	// Define the variable factory
 	parser.SetVarFactory(AddVariable, &parser);
 
+	// You can extract the bytecode of a parsed functions and save it for later use.
+//	parser.SetExpr(_T("sin(a)+strfun2(sVar1, 1 , 2)"));
+//	parser.Eval();
+//	ParserByteCode bytecode1(parser.GetByteCode());
+
+//	parser.SetExpr(_T("10*cos(a)"));
+//	parser.Eval();
+//	ParserByteCode bytecode2(parser.GetByteCode());
+
 	for (;;)
 	{
 		try
@@ -491,7 +504,21 @@ static void Calc()
 			if (!sLine.length())
 				continue;
 
-			parser.SetExpr(sLine);
+			if (sLine == _T("restore1"))
+			{
+//				parser.SetByteCode(bytecode1);
+//				bytecode1.AsciiDump();
+			}
+			else if (sLine == _T("restore2"))
+			{
+//				parser.SetByteCode(bytecode2);
+//				bytecode2.AsciiDump();
+			}
+			else
+			{
+				parser.SetExpr(sLine);
+			}
+
 			mu::console() << std::setprecision(12);
 
 			// There are multiple ways to retrieve the result...

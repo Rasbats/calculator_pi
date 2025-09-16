@@ -31,6 +31,9 @@
 #include "VariableFactory.h"
 #include "muParser.h" //Muparser needs to be included before wxidgets, otherwhise a linker conflict will occur.
 #include "muParserError.h"
+#include "json/reader.h"
+#include "json/writer.h"
+
 
 
 //#include <locale.h> Dont touch locale, causes serious errors in OpenCPN.

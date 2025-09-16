@@ -1,6 +1,6 @@
 # CMake based on work from @xantares
-cmake_minimum_required (VERSION 3.1.0)
-set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required (VERSION 3.15.0)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # By default, build in Release mode. Must appear before project() command
@@ -13,7 +13,7 @@ project(muParserProject)
 # Bump versions on release
 set(MUPARSER_VERSION_MAJOR 2)
 set(MUPARSER_VERSION_MINOR 3)
-set(MUPARSER_VERSION_PATCH 2)
+set(MUPARSER_VERSION_PATCH 5)
 set(MUPARSER_VERSION ${MUPARSER_VERSION_MAJOR}.${MUPARSER_VERSION_MINOR}.${MUPARSER_VERSION_PATCH})
 
 # Build options
@@ -24,18 +24,19 @@ option(BUILD_SHARED_LIBS "Build shared/static libs" ON)
 
 if(ENABLE_OPENMP)
     find_package(OpenMP REQUIRED)
-    set(CMAKE_CXX_FLAGS "${OpenMP_CXX_FLAGS} ${CMAKE_CXX_FLAGS}")
-    set(CMAKE_SHARED_LIBRARY_CXX_FLAGS "${OpenMP_CXX_FLAGS} ${CMAKE_SHARED_LIBRARY_CXX_FLAGS}")
 endif()
 
 # Credit: https://stackoverflow.com/questions/2368811/how-to-set-warning-level-in-cmake/3818084
 if(MSVC)
+    add_compile_definitions(NOMINMAX)
     # Force to always compile with W4
     if(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
       string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
     else()
       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
     endif()
+
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4251")
 elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
     # Update if necessary
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic")
@@ -67,6 +68,7 @@ endif ()
 
 if(ENABLE_OPENMP)
   target_compile_definitions(muparser PRIVATE MUP_USE_OPENMP)
+  target_link_libraries(muparser PRIVATE OpenMP::OpenMP_CXX)
 endif()
 
 if(ENABLE_WIDE_CHAR)
@@ -110,6 +112,7 @@ export(EXPORT muparser-export
     FILE "${CMAKE_BINARY_DIR}/muparser-targets.cmake"
     NAMESPACE muparser::
 )
+add_library(muparser::muparser ALIAS muparser)
 
 # Export the installed target (typically for packaging)
 include(CMakePackageConfigHelpers)
@@ -136,6 +139,9 @@ install(FILES
 
 # Define variables for the pkg-config file
 set(PACKAGE_NAME muparser)
+if(ENABLE_WIDE_CHAR)
+  set(PKG_CONFIG_FLAGS "-D_UNICODE")
+endif(ENABLE_WIDE_CHAR)
 configure_file(
     muparser.pc.in
     ${CMAKE_BINARY_DIR}/muparser.pc

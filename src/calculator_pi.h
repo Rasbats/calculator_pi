@@ -44,6 +44,7 @@
 //#define DEBUG  //No debugging text in production plugin!
 
 class Dlg;
+class pidc;
 
 //----------------------------------------------------------------------------------------------------------
 //    The PlugIn Class Definition
@@ -51,7 +52,7 @@ class Dlg;
 
 #define CALCULATOR_TOOL_POSITION    -1          // Request default positioning of toolbar tool
 
-class calculator_pi : public opencpn_plugin_116
+class calculator_pi : public opencpn_plugin_118
 {
 public:
       calculator_pi(void *ppimgr);

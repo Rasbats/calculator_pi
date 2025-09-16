@@ -34,7 +34,7 @@ option(CALCULATOR_USE_SVG "Use SVG graphics" ON)
 # -------  Plugin setup --------
 #
 set(PKG_NAME calculator_pi)
-set(PKG_VERSION  4.1.0)
+set(PKG_VERSION  4.2.0)
 set(PKG_PRERELEASE "")  # Empty, or a tag like 'beta'
 
 set(DISPLAY_NAME Calculator)    # Dialogs, installer artifacts, ...
@@ -66,7 +66,7 @@ SET(SRC
     src/VariableFactory.cpp
 )
 
-set(PKG_API_LIB api-16)  #  A directory in libs/ e. g., api-17 or api-16
+set(PKG_API_LIB api-18)  #  A directory in libs/ e. g., api-17 or api-16
 
 macro(late_init)
   # Perform initialization after the PACKAGE_NAME library, compilers
@@ -78,14 +78,21 @@ endmacro ()
 
 macro(add_plugin_libraries)
   # Add libraries required by this plugin
-  add_subdirectory("libs/tinyxml")
+  add_subdirectory("${CMAKE_SOURCE_DIR}/opencpn-libs/tinyxml")
   target_link_libraries(${PACKAGE_NAME} ocpn::tinyxml)
 
-  add_subdirectory("libs/wxJSON")
+  add_subdirectory("${CMAKE_SOURCE_DIR}/opencpn-libs/wxJSON")
   target_link_libraries(${PACKAGE_NAME} ocpn::wxjson)
 
-  add_subdirectory("libs/plugingl")
-  target_link_libraries(${PACKAGE_NAME} ocpn::plugingl)
+  add_subdirectory("${CMAKE_SOURCE_DIR}/opencpn-libs/jsoncpp")
+  target_link_libraries(${PACKAGE_NAME} ocpn::jsoncpp)
+
+  add_subdirectory("${CMAKE_SOURCE_DIR}/opencpn-libs/plugin_dc")
+  target_link_libraries(${PACKAGE_NAME} ocpn::plugin-dc)
+
+  # The wxsvg library enables SVG overall in the plugin
+  add_subdirectory("${CMAKE_SOURCE_DIR}/opencpn-libs/wxsvg")
+  target_link_libraries(${PACKAGE_NAME} ocpn::wxsvg)
 
   add_subdirectory("libs/ocpn-muparser")
   target_link_libraries(${PACKAGE_NAME} muparser::muparser)
